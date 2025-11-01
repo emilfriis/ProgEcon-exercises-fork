@@ -59,4 +59,4 @@ states, Udraws, u_rate = simulate_many_workers_shocks_3state(T, N, s, f_s, ell, 
 print("First 10 unemployment rates:", np.round(u_rate[:10], 3))
 print("Last 10 unemployment rates :", np.round(u_rate[-10:], 3))
 print(f"Time-avg unemployment      : {u_rate.mean():.3f}")
-print(f"Pooled unemployment (T×N)  : {states.mean():.3f}")
+print(f"Pooled unemployment (T×N)  : {(states != 0).mean():.3f}")
