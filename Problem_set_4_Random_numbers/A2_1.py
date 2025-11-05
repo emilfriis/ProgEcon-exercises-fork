@@ -8,8 +8,8 @@ def simulate_worker_shocks(T, s, f, s0=0, seed=42):
     - In U: find a job to E with prob f
     """
     rng = np.random.default_rng(seed)
-    states = np.empty(T + 1, dtype=np.int8)
-    states[0] = s0
+    states = np.empty(T + 1, dtype=np.int8) 
+    states[0] = s0 # 
     uniforms = rng.random(T)  # one draw per period: u_t ~ U[0,1]
 
     for t in range(T):

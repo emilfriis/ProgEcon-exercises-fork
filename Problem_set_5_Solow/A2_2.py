@@ -11,14 +11,14 @@ g     = 0.02   # technology growth; population growth n=0 here
 
 # --- Steady state and grid --------------------------------------------------
 k_star = k_star_with_g(alpha, s, delta, g)
-kmax   = max(4.0, 2.5*k_star)
-k      = np.linspace(1e-6, kmax, 600)
+kmax   = max(4.0, 2.5*k_star) # set max k for plotting
+k      = np.linspace(1e-6, kmax, 600) 
 
 invest     = s * f(k, alpha)           # s f(k)
 break_even = (delta + g) * k           # (δ+g)k
 
 # --- Plot -------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(6, 4))
+fig, ax = plt.subplots(figsize=(6, 4)) 
 ax.plot(k, invest, label=r"$s\,f(k)$")
 ax.plot(k, break_even, label=r"$(\delta+g)\,k$")
 ax.axvline(k_star, linestyle="--", color="black", alpha=0.7, label=fr"$k^*={k_star:.3f}$")

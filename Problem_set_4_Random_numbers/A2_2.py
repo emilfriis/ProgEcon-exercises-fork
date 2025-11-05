@@ -9,7 +9,7 @@ seed = 7
 
 def simulate_many_workers_shocks(T, N, s, f, s0=0, seed=42):
     rng = np.random.default_rng(seed)
-    states = np.full((T + 1, N), s0, dtype=np.int8)
+    states = np.full((T + 1, N), s0, dtype=np.int8) # np.full is a np method to initialize with a specific value
     U = rng.random((T, N))  # one draw per worker per period
 
     for t in range(T):
