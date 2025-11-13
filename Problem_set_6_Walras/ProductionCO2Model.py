@@ -239,7 +239,7 @@ class ProductionCO2ModelClass():
             par.tau = tau  
             self.solve_grid_search(Np=5)          
             check = self.solve(do_print=do_print_solve)
-            SWF = sol.U - par.kappa*sol.y2    
+            SWF = np.nan # REPLACE CODE HERE  
 
             if do_print or not check: 
                 print(f'{tau = :.3f}, {sol.U = :.4f}, {SWF = :.5f}')
@@ -256,13 +256,14 @@ class ProductionCO2ModelClass():
             SWFs[i] = -SWF(tau,do_print=i%5==0)
             Us[i] = sol.U
 
-        # bc optimal tau
+        # c. optimal tau
         i = np.argmax(SWFs)
-        tau_min = taus[i-1]
-        tau_max = taus[i+1]
+        tau_min = None # RPLACE CODE HERE 
+        tau_max = None # RPLACE CODE HERE 
 
-        res = optimize.minimize_scalar(SWF,bounds=(tau_min,tau_max),method='bounded')
-        
+        # ADD CODE HERE
+        # res = ?
+
         if not res.success:
             print(f'{res.message = }')
             assert res.success, 'Optimal tau not found!'
