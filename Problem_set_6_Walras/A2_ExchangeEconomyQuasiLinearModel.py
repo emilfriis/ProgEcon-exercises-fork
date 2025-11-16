@@ -3,7 +3,7 @@ import numpy as np
 from scipy import optimize
 from ExchangeEconomyModel import ExchangeEconomyModelClass
 
-class ExchangeEconomyQuasiLineaModelClass(ExchangeEconomyModelClass):
+class ExchangeEconomyQuasiLinearModelClass(ExchangeEconomyModelClass):
 
     # uA(x1A,x2A) = ln(x1A) + alpha*x2A
     # uB(x1B,x2B) = ln(x1B) + beta*x2B
